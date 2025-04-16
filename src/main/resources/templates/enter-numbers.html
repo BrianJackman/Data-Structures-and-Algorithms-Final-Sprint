@@ -5,11 +5,22 @@
 </head>
 <body>
     <h1>Enter Numbers to Create a Binary Search Tree</h1>
+
+    <!-- Form to input numbers -->
     <form action="/process-numbers" method="post">
         <label for="numbers">Enter numbers (comma-separated):</label>
         <input type="text" id="numbers" name="numbers" required>
         <button type="submit">Submit</button>
     </form>
+
+    <!-- Display the resulting tree -->
+    <div>
+        <h2>Resulting Binary Search Tree:</h2>
+        <p><strong>Input Numbers:</strong> ${inputNumbers}</p>
+        <p><strong>Tree Structure:</strong> ${treeStructure}</p>
+    </div>
+
+    <!-- Link to view previously stored trees -->
     <form action="/previous-trees" method="get">
         <button type="submit">Show Previous Trees</button>
     </form>

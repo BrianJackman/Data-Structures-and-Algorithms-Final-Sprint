@@ -4,9 +4,19 @@
     <title>Previous Trees</title>
 </head>
 <body>
-    <h1>Previously Stored Trees</h1>
+    <h1>Previously Stored Binary Search Trees</h1>
+
+    <!-- Display the list of stored trees -->
     <ul>
-        
+        <li th:each="tree : ${trees}">
+            <p><strong>Input Numbers:</strong> <span th:text="${tree.inputNumbers}"></span></p>
+            <p><strong>Tree Structure:</strong> <span th:text="${tree.treeStructure}"></span></p>
+        </li>
     </ul>
+
+    <!-- Link to go back to the input page -->
+    <form action="/" method="get">
+        <button type="submit">Back to Input Page</button>
+    </form>
 </body>
 </html>
