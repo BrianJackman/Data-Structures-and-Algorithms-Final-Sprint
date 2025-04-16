@@ -1,8 +1,9 @@
-package com.keyin.service;
+package com.keyin.binary_search_tree_app.service;
 
-import com.keyin.model.TreeData;
-import com.keyin.repository.TreeRepository;
-import com.keyin.util.BinarySearchTree;
+import com.keyin.binary_search_tree_app.model.TreeData;
+import com.keyin.binary_search_tree_app.repository.TreeRepository;
+import com.keyin.binary_search_tree_app.util.BinarySearchTree;
+
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

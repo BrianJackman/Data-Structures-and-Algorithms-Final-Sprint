@@ -1,7 +1,8 @@
-package com.keyin.controller;
+package com.keyin.binary_search_tree_app.controller;
 
-import com.keyin.model.TreeData;
-import com.keyin.service.TreeService;
+import com.keyin.binary_search_tree_app.model.TreeData;
+import com.keyin.binary_search_tree_app.service.TreeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

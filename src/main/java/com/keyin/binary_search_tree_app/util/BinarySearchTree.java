@@ -1,4 +1,4 @@
-package com.keyin.util;
+package com.keyin.binary_search_tree_app.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,26 @@ public class BinarySearchTree {
         }
     }
 
-    // Method to serialize the tree structure as a string
+    // Method to balance the tree
+    public void balanceTree() {
+        List<Integer> sortedNodes = inOrderTraversal(); // Get nodes in sorted order
+        root = buildBalancedTree(sortedNodes, 0, sortedNodes.size() - 1);
+    }
+
+    private Node buildBalancedTree(List<Integer> sortedNodes, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+
+        int mid = (start + end) / 2;
+        Node node = new Node(sortedNodes.get(mid));
+        node.left = buildBalancedTree(sortedNodes, start, mid - 1);
+        node.right = buildBalancedTree(sortedNodes, mid + 1, end);
+
+        return node;
+    }
+
+    // Method to serialize the tree structure as a string (default with nulls)
     public String serialize() {
         StringBuilder sb = new StringBuilder();
         serializeRecursive(root, sb);
@@ -66,5 +85,19 @@ public class BinarySearchTree {
             serializeRecursive(node.left, sb);
             serializeRecursive(node.right, sb);
         }
+    }
+
+    // Method to serialize the tree in a human-readable format
+    public String serializeReadable() {
+        return serializeReadableRecursive(root);
+    }
+
+    private String serializeReadableRecursive(Node node) {
+        if (node == null) {
+            return "";
+        }
+        String left = serializeReadableRecursive(node.left);
+        String right = serializeReadableRecursive(node.right);
+        return node.value + (left.isEmpty() && right.isEmpty() ? "" : "(" + left + "," + right + ")");
     }
 }

@@ -1,4 +1,4 @@
-package com.keyin.model;
+package com.keyin.binary_search_tree_app.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
